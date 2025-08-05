@@ -1,0 +1,25 @@
+
+NAME = bureaucrat
+
+SRC = main.cpp Bureaucrat.cpp Form.cpp
+
+CC = c++
+
+FLAGS = -std=c++98 -Wall -Werror -Wextra
+
+RM = rm -rf
+
+all: $(NAME)
+
+$(NAME): $(SRC)
+	$(CC) $(FLAGS) $^ -o $(NAME)
+
+clean:
+	@$(RM) $(OBJ)
+
+fclean: clean
+	@$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
