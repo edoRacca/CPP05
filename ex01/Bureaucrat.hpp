@@ -46,6 +46,7 @@ public:
 			const char* what() const throw() {return (this->_msg.c_str());};
 			virtual ~GradeTooLowException() throw() {};
 	};
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

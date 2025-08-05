@@ -6,6 +6,7 @@
 
 class Form
 {
+
 private:
 	const std::string _name;
 	bool _signed;
@@ -13,22 +14,16 @@ private:
 	const int _execgrade;
 
 public:
-	Form(const std::string name, bool sign, int signgrade, int execgrade): _name(name), _signed(sign), _signgrade(signgrade), _execgrade(execgrade)
-	{
-		std::cout << "Form constructor called" << std::endl;
-	};
-	Form(const Form& f): _name(f._name), _signed(f._signed), _signgrade(f._signgrade), _execgrade(f._execgrade)
-	{
-		std::cout << "Form copy constructor called" << std::endl;
-	};
+	Form(const std::string name, bool sign, int signgrade, int execgrade);
+	Form(const Form& f);
 	~Form();
 
 	Form& operator=(const Form& f);
 
-	std::string getName();
-	bool getSigned();
-	int getSignGrade();
-	int getExecGrade();
+	std::string	getName() const;
+	bool		getSigned() const;
+	int			getSignGrade() const;
+	int			getExecGrade() const;
 
 };
 

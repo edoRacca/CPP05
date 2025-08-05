@@ -1,6 +1,16 @@
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
+{
+	std::cout << "Bureaucrat constructor called" << std::endl;
+};
+
+Bureaucrat::Bureaucrat(const Bureaucrat& b): _name(b._name), _grade(b._grade)
+{
+	std::cout << "Bureaucrat copy constructor called" << std::endl;
+};
+
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Bureaucrat destructor called" << std::endl;
@@ -8,7 +18,8 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b)
 {
-	this->_grade = b._grade;
+	if (this != &b)
+		this->_grade = b._grade;
 	return (*this);
 }
 

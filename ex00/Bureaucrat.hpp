@@ -14,14 +14,8 @@ private:
 	int					_grade;
 
 public:
-	Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
-	{
-		std::cout << "Bureaucrat constructor called" << std::endl;
-	};
-	Bureaucrat(const Bureaucrat& b): _name(b._name), _grade(b._grade)
-	{
-		std::cout << "Bureaucrat copy constructor called" << std::endl;
-	};
+	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat& b);
 	~Bureaucrat();
 
 	Bureaucrat& operator=(const Bureaucrat& b);
