@@ -3,6 +3,7 @@
 		"*.c": "c",
 		"Makefile": "makefile",
 		"*.h": "c",
-		"iostream": "cpp"
+		"iostream": "cpp",
+		"ostream": "cpp"
 	}
 }

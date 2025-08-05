@@ -39,6 +39,7 @@ public:
 		public:
 			GradeTooHighException(): _msg("Grade of bureaucrat can't be higher") {};
 			const char* what() const throw() {return (this->_msg.c_str());};
+			virtual ~GradeTooHighException() throw() {};
 	};
 
 	class GradeTooLowException: public std::exception
@@ -49,6 +50,7 @@ public:
 		public:
 			GradeTooLowException(): _msg("Grade of bureaucrat can't be lower") {};
 			const char* what() const throw() {return (this->_msg.c_str());};
+			virtual ~GradeTooLowException() throw() {};
 	};
 };
 
