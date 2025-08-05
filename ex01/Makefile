@@ -1,5 +1,5 @@
 
-NAME = bureaucrat
+NAME = form
 
 SRC = main.cpp Bureaucrat.cpp Form.cpp
 
