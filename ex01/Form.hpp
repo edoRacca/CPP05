@@ -14,7 +14,7 @@ private:
 	const int _execgrade;
 
 public:
-	Form(const std::string name, bool sign, int signgrade, int execgrade);
+	Form(const std::string name, int signgrade, int execgrade);
 	Form(const Form& f);
 	~Form();
 
@@ -31,7 +31,7 @@ public:
 			const std::string _msg;
 		
 		public:
-			GradeTooHighException(): _msg("Grade of this form is too high for this Bureaucrat") {};
+			GradeTooHighException(): _msg("Grade of this form is too high") {};
 			const char* what() const throw() {return (this->_msg.c_str());};
 			virtual ~GradeTooHighException() throw() {};
 	};
@@ -42,7 +42,7 @@ public:
 			const std::string _msg;
 		
 		public:
-			GradeTooLowException(): _msg("Grade of this form is too low for this Bureaucrat") {};
+			GradeTooLowException(): _msg("Grade of this form is too low") {};
 			const char* what() const throw() {return (this->_msg.c_str());};
 			virtual ~GradeTooLowException() throw() {};
 	};

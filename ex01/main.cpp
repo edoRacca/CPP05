@@ -1,26 +1,77 @@
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat*	createBureaucrat(std::string name, int grade)
+{
+	try
+	{
+		Bureaucrat *b = new Bureaucrat(name, grade);
+		return (b);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	return (NULL);
+}
+
+void	print_increment_bureaucrat(Bureaucrat *b)
+{
+	if (b)
+	{
+		std::cout << *b << std::endl;
+		try
+		{
+			b->incrementGrade();
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+		std::cout << *b << std::endl;
+		delete b;
+		std::cout << std::endl;
+	}
+}
+
+void	print_decrement_bureaucrat(Bureaucrat *b)
+{
+	if (b)
+	{
+		std::cout << *b << std::endl;
+		try
+		{
+			b->decrementGrade();
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+		std::cout << *b << std::endl;
+		delete b;
+		std::cout << std::endl;
+	}
+}
+
 int main(void)
 {
-	Bureaucrat timmy("Timmy", 1);
-	Bureaucrat billy("Billy", 150);
-	Bureaucrat john("John", 12);
-	Bureaucrat alfred("Alfred", 102);
+	
+	Bureaucrat* timmy = createBureaucrat("Timmy", 1);
+	print_increment_bureaucrat(timmy);
+	
+	Bureaucrat* john = createBureaucrat("John", 150);
+	print_decrement_bureaucrat(john);
 
-	std::cout << std::endl << timmy << std::endl;
-	timmy.incrementGrade();
-	std::cout << timmy << std::endl << std::endl;
+	Bureaucrat* alfred = createBureaucrat("Alfred", 0);
+	print_increment_bureaucrat(alfred);
 
-	std::cout << billy << std::endl;
-	billy.decrementGrade();
-	std::cout << billy << std::endl << std::endl;
+	Bureaucrat* gerry = createBureaucrat("Gerry", 151);
+	print_decrement_bureaucrat(gerry);
 
-	std::cout << alfred << std::endl;
-	alfred.incrementGrade();
-	std::cout << alfred << std::endl << std::endl;
+	Bureaucrat* Hugo = createBureaucrat("Hugo", 12);
+	print_increment_bureaucrat(Hugo);
 
-	std::cout << john << std::endl;
-	john.decrementGrade();
-	std::cout << john << std::endl << std::endl;
+	Bureaucrat* pippo = createBureaucrat("Pippo", 65);
+	print_decrement_bureaucrat(pippo);
+
 }

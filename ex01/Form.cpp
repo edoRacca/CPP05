@@ -1,8 +1,12 @@
 
 #include "Form.hpp"
 
-Form::Form(const std::string name, bool sign, int signgrade, int execgrade): _name(name), _signed(sign), _signgrade(signgrade), _execgrade(execgrade)
+Form::Form(const std::string name, int signgrade, int execgrade): _name(name), _signed(false), _signgrade(signgrade), _execgrade(execgrade)
 {
+	if (signgrade > 150 || execgrade > 150)
+		throw (GradeTooHighException());
+	else if (signgrade < 1 || execgrade < 1)
+		throw (GradeTooLowException());
 	std::cout << "Form constructor called" << std::endl;
 };
 
