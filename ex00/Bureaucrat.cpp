@@ -1,9 +1,25 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 {
-	std::cout << "Bureaucrat constructor called" << std::endl;
+	try
+	{
+		if (grade < 1)
+			throw (GradeTooHighException());
+		else if (grade > 150)
+			throw  (GradeTooLowException());
+		this->_grade = grade;
+		std::cout << "Bureaucrat constructor called" << std::endl;
+	}
+	catch(const GradeTooHighException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch(const GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 };
 
 Bureaucrat::Bureaucrat(const Bureaucrat& b): _name(b._name), _grade(b._grade)

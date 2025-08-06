@@ -3,6 +3,8 @@
 
 int main(void)
 {
+	Bureaucrat august("August", 0);
+	Bureaucrat gerry("Gerry", 151);
 	Bureaucrat timmy("Timmy", 1);
 	Bureaucrat billy("Billy", 150);
 	Bureaucrat john("John", 12);
