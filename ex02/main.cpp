@@ -33,14 +33,14 @@ void	sign(AForm& f, Bureaucrat& b)
 
 int main(void)
 {
-	AForm f1("Macchina", 12, 12);
-	AForm f2("Struzzo", 1, 1);
+	// AForm f1("Macchina", 12, 12);
+	// AForm f2("Struzzo", 1, 1);
 
-	Bureaucrat* timmy = createBureaucrat("Timmy", 9);
+	// Bureaucrat* timmy = createBureaucrat("Timmy", 9);
 	
-	sign(f1, *timmy);
-	sign(f2, *timmy);
+	// sign(f1, *timmy);
+	// sign(f2, *timmy);
 
-	delete timmy;
+	// delete timmy;
 	
 }

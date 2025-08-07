@@ -22,12 +22,13 @@ public:
 
 	AForm& operator=(const AForm& f);
 
-	std::string	getName() const;
-	bool		getSigned() const;
-	int			getSignGrade() const;
-	int			getExecGrade() const;
+	std::string	 getName() const;
+	bool		 getSigned() const;
+	int			 getSignGrade() const;
+	int			 getExecGrade() const;
 
-	void		beSigned(const Bureaucrat& b);
+	void		 beSigned(const Bureaucrat& b);
+	virtual void execute(Bureaucrat const & executor) = 0;
 
 	class GradeTooHighException: public std::exception
 	{
