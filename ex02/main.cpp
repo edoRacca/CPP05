@@ -1,6 +1,6 @@
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat*	createBureaucrat(std::string name, int grade)
 {
@@ -17,7 +17,7 @@ Bureaucrat*	createBureaucrat(std::string name, int grade)
 	return (NULL);
 }
 
-void	sign(Form& f, Bureaucrat& b)
+void	sign(AForm& f, Bureaucrat& b)
 {
 	std::cout << "Form signed: " << (f.getSigned() == true ? "true" : "false") << std::endl;
 	try
@@ -33,8 +33,8 @@ void	sign(Form& f, Bureaucrat& b)
 
 int main(void)
 {
-	Form f1("Macchina", 12, 12);
-	Form f2("Struzzo", 1, 1);
+	AForm f1("Macchina", 12, 12);
+	AForm f2("Struzzo", 1, 1);
 
 	Bureaucrat* timmy = createBureaucrat("Timmy", 9);
 	

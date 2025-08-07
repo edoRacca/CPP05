@@ -1,7 +1,7 @@
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form(const std::string name, int signgrade, int execgrade): _name(name), _signed(false), _signgrade(signgrade), _execgrade(execgrade)
+AForm::AForm(const std::string name, int signgrade, int execgrade): _name(name), _signed(false), _signgrade(signgrade), _execgrade(execgrade)
 {
 	if (signgrade > 150 || execgrade > 150)
 		throw (GradeTooHighException("This form grade is too low"));
@@ -10,44 +10,39 @@ Form::Form(const std::string name, int signgrade, int execgrade): _name(name), _
 	std::cout << "Form constructor called" << std::endl;
 };
 
-Form::Form(const Form& f): _name(f._name), _signed(f._signed), _signgrade(f._signgrade), _execgrade(f._execgrade)
+AForm::AForm(const AForm& f): _name(f._name), _signed(f._signed), _signgrade(f._signgrade), _execgrade(f._execgrade)
 {
 	std::cout << "Form copy constructor called" << std::endl;
 };
 
-Form::~Form()
-{
-	std::cout << "Form destructor called" << std::endl;
-}
-
-Form& Form::operator=(const Form& f)
+AForm& AForm::operator=(const AForm& f)
 {
 	if (this != &f)
 		this->_signed = f._signed;
 	return (*this);
 }
 
-std::string Form::getName() const
+std::string AForm::getName() const
 {
 	return (this->_name);
 }
 
-bool Form::getSigned() const
+bool AForm::getSigned() const
 {
 	return (this->_signed);
 }
 
-int Form::getSignGrade() const
+int AForm::getSignGrade() const
 {
 	return (this->_signgrade);
 }
 
-int Form::getExecGrade() const
+int AForm::getExecGrade() const
 {
 	return (this->_execgrade);
 }
 
-void Form::beSigned(const Bureaucrat& b)
+void AForm::beSigned(const Bureaucrat& b)
 {
 	if (this->_signgrade < b.getGrade())
 		throw (GradeTooLowException(b.getName() + " couldn't sign \"" + this->_name + "\" because form grade is too high"));
@@ -55,7 +50,7 @@ void Form::beSigned(const Bureaucrat& b)
 	std::cout << b.getName() + " signed \"" + this->_name + "\"" << std::endl;
 }
 
-std::ostream& operator<<(std::ostream& os, const Form& f)
+std::ostream& operator<<(std::ostream& os, const AForm& f)
 {
 	os << "Form " << f.getName() << ", signed " << ((f.getSigned() == 1) ? "true" : "false") << ", grade to be signed is " \
 	<< f.getSignGrade() << ", grade to be executed " << f.getExecGrade() << std::endl;
