@@ -15,6 +15,12 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
 	if (!this->getSigned() || executor.getGrade() > this->getExecGrade())
-		throw (GradeTooHighException());
-
+		throw (GradeTooHighException("Form execution grade is too high"));
+	else
+	{
+		std::ofstream file(this->_target + "_shrubbery");
+		std::string buf = "        __ _.--..--._ _\n     .-' _/   _/\\_   \\_'-.\n    |__ /   _/\\__/\\_   \\__|\n       |___/\\_\\__/  \\___|\n              \\__/\n              \\__/\n               \\__/\n                \\__/\n             ____\\__/___\n       . - '             ' -.\n      /                      \\\n~~~~~~~  ~~~~~ ~~~~~  ~~~ ~~~  ~~~~~\n  ~~~   ~~~~~   ~!~~   ~~ ~  ~ ~ ~pjb";
+		file << buf;
+		file.close();
+	}
 }

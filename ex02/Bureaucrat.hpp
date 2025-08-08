@@ -3,6 +3,7 @@
 # define BUREAUCRAT_H
 
 # include <iostream>
+# include <fstream>
 # include <exception>
 # include <string>
 
