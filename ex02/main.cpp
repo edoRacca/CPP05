@@ -1,6 +1,7 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 Bureaucrat*	createBureaucrat(std::string name, int grade)
 {
@@ -33,14 +34,8 @@ void	sign(AForm& f, Bureaucrat& b)
 
 int main(void)
 {
-	// AForm f1("Macchina", 12, 12);
-	// AForm f2("Struzzo", 1, 1);
+	ShrubberyCreationForm a("Ginepro");
+	Bureaucrat tom("Tom", 12);
 
-	// Bureaucrat* timmy = createBureaucrat("Timmy", 9);
-	
-	// sign(f1, *timmy);
-	// sign(f2, *timmy);
-
-	// delete timmy;
-	
+	a.execute(tom);
 }

@@ -1,7 +1,7 @@
 
 NAME = form
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 CC = c++
 
