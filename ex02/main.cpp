@@ -20,7 +20,6 @@ Bureaucrat*	createBureaucrat(std::string name, int grade)
 
 void	sign(AForm& f, Bureaucrat& b)
 {
-	std::cout << "Form signed: " << (f.getSigned() == true ? "true" : "false") << std::endl;
 	try
 	{
 		b.signForm(f);
@@ -29,7 +28,18 @@ void	sign(AForm& f, Bureaucrat& b)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << "Form signed: " << (f.getSigned() == true ? "true" : "false") << std::endl << std::endl;
+}
+
+void	exec(AForm& f, Bureaucrat& b)
+{
+	try
+	{
+		f.execute(b);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 int main(void)
@@ -37,5 +47,10 @@ int main(void)
 	ShrubberyCreationForm a("Ginepro");
 	Bureaucrat tom("Tom", 12);
 
-	a.execute(tom);
+	exec(a, tom);
+	std::cout << std::endl << a << std::endl;
+
+	sign(a, tom);
+	std::cout << std::endl << a << std::endl;
+	exec(a, tom);
 }

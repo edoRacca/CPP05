@@ -15,6 +15,11 @@ AForm::AForm(const AForm& f): _name(f._name), _signed(f._signed), _signgrade(f._
 	std::cout << "Form copy constructor called" << std::endl;
 };
 
+AForm::~AForm()
+{
+	std::cout << "AForm constructor called" << std::endl;
+}
+
 AForm& AForm::operator=(const AForm& f)
 {
 	if (this != &f)
@@ -45,9 +50,9 @@ int AForm::getExecGrade() const
 void AForm::beSigned(const Bureaucrat& b)
 {
 	if (this->_signgrade < b.getGrade())
-		throw (GradeTooLowException(b.getName() + " couldn't sign \"" + this->_name + "\" because form grade is too high"));
+		throw (GradeTooLowException(T_RED"" + b.getName() + " couldn't sign \"" + this->_name + "\" because form grade is too high" T_WHITE));
 	this->_signed = true;
-	std::cout << b.getName() + " signed \"" + this->_name + "\"" << std::endl;
+	std::cout << T_GREEN"" + b.getName() + " signed \"" + this->_name + "\"" T_WHITE << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& f)
