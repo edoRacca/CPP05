@@ -45,7 +45,7 @@ void	exec(AForm& f, Bureaucrat& b)
 int main(void)
 {
 	ShrubberyCreationForm a("Ginepro");
-	Bureaucrat tom("Tom", 12);
+	Bureaucrat tom("Tom", 15);
 
 	exec(a, tom);
 	std::cout << std::endl << a << std::endl;
