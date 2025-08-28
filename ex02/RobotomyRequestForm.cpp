@@ -24,8 +24,8 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor)
 		srand(time(0));
 		std::cout << "trimp trum tramp ..." << std::endl;
 		if (rand() % 100 < 50)
-			std::cout << T_GREEN"" + this->_target + " has been robotomized successfully" T_WHITE << std::endl;
+			std::cout << T_GREEN"\"" + this->_target + "\" has been robotomized successfully" T_WHITE << std::endl;
 		else
-			std::cout << T_RED"" + this->_target + " robotomization failed..." T_WHITE << std::endl;
+			std::cout << T_RED"\"" + this->_target + "\" robotomization failed..." T_WHITE << std::endl;
 	}
 }

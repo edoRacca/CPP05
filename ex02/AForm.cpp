@@ -52,7 +52,7 @@ void AForm::beSigned(const Bureaucrat& b)
 	if (this->_signgrade < b.getGrade())
 		throw (GradeTooLowException(T_RED"" + b.getName() + " couldn't sign \"" + this->_name + "\" because form grade is too high" T_WHITE));
 	this->_signed = true;
-	std::cout << T_GREEN"" + b.getName() + " signed \"" + this->_name + "\"" T_WHITE << std::endl;
+	std::cout << T_GREEN"" + b.getName() + " signed a \"" + this->_name + "\"" T_WHITE << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& f)

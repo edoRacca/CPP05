@@ -24,6 +24,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 		std::string buf = "        __ _.--..--._ _\n     .-' _/   _/\\_   \\_'-.\n    |__ /   _/\\__/\\_   \\__|\n       |___/\\_\\__/  \\___|\n              \\__/\n              \\__/\n               \\__/\n                \\__/\n             ____\\__/___\n       . - '             ' -.\n      /                      \\\n~~~~~~~  ~~~~~ ~~~~~  ~~~ ~~~  ~~~~~\n  ~~~   ~~~~~   ~!~~   ~~ ~  ~ ~ ~pjb";
 		file << buf;
 		file.close();
-		std::cout << T_GREEN"" + executor.getName() + " signed \"" + this->_target + "\"" T_WHITE << std::endl;
+		std::cout << T_GREEN"" + executor.getName() + " executed \"" + this->_target + "\"" T_WHITE << std::endl;
 	}
 }
