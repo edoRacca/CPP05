@@ -3,6 +3,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <cstdlib>
 
 Bureaucrat*	createBureaucrat(std::string name, int grade)
@@ -48,13 +49,17 @@ int main(void)
 {
 	ShrubberyCreationForm a("Ginepro");
 	RobotomyRequestForm b("Dalvetro");
-	Bureaucrat tom("Tom", 15);
+	PresidentialPardonForm c ("Cucuzzo");
+	Bureaucrat tom("Tom", 2);
 
 	sign(a, tom);
 	exec(a, tom);
 
 	sign(b, tom);
 	exec(b, tom);
+
+	sign(c, tom);
+	exec(c, tom);
 	// std::cout << std::endl << a << std::endl;
 
 	// std::cout << std::endl << a << std::endl;
