@@ -1,0 +1,64 @@
+
+#include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
+{
+	if (grade < 1)
+		throw (GradeTooHighException());
+	else if (grade > 150)
+		throw  (GradeTooLowException());
+	this->_grade = grade;
+	std::cout << "Bureaucrat constructor called" << std::endl;
+};
+
+Bureaucrat::Bureaucrat(const Bureaucrat& b): _name(b._name), _grade(b._grade)
+{
+	std::cout << "Bureaucrat copy constructor called" << std::endl;
+};
+
+Bureaucrat::~Bureaucrat()
+{
+	std::cout << "Bureaucrat destructor called" << std::endl;
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b)
+{
+	if (this != &b)
+		this->_grade = b._grade;
+	return (*this);
+}
+
+const std::string Bureaucrat::getName(void) const
+{
+	return (this->_name);
+}
+
+int Bureaucrat::getGrade(void) const
+{
+	return (this->_grade);
+}
+
+void Bureaucrat::incrementGrade()
+{
+	if (this->_grade - 1 < 1)
+		throw (GradeTooHighException());
+	this->_grade -= 1;
+}
+
+void Bureaucrat::decrementGrade()
+{
+	if (this->_grade + 1 > 150)
+		throw (GradeTooLowException());
+	this->_grade += 1;
+}
+
+void Bureaucrat::signForm(AForm& f)
+{
+	f.beSigned(*this);
+}
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
+{
+	os << b.getName() << ", bureaucrat grade " << b.getGrade();
+	return (os);
+}
