@@ -10,8 +10,11 @@ private:
 	
 
 public:
-	Intern(/* args */);
+	Intern();
+	Intern(const Intern &i);
 	~Intern();
+
+	Intern& operator=(const Intern& i);
 
 	AForm* makeForm(std::string form, std::string target);
 };

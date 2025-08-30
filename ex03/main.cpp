@@ -4,6 +4,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 #include <cstdlib>
 
 Bureaucrat*	createBureaucrat(std::string name, int grade)
@@ -47,21 +48,10 @@ void	exec(AForm& f, Bureaucrat& b)
 
 int main(void)
 {
-	ShrubberyCreationForm a("Ginepro");
-	RobotomyRequestForm b("Dalvetro");
-	PresidentialPardonForm c ("Cucuzzo");
-	Bureaucrat tom("Tom", 2);
+	Intern someRandomIntern;
+	AForm* rrf;
+	AForm* sh;
 
-	sign(a, tom);
-	exec(a, tom);
-
-	sign(b, tom);
-	exec(b, tom);
-
-	sign(c, tom);
-	exec(c, tom);
-	// std::cout << std::endl << a << std::endl;
-
-	// std::cout << std::endl << a << std::endl;
-	// exec(a, tom);
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	sh = someRandomIntern.makeForm("ShrubberyCreationForm", "pippo");
 }
