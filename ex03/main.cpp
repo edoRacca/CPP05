@@ -54,4 +54,6 @@ int main(void)
 
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	sh = someRandomIntern.makeForm("ShrubberyCreationForm", "pippo");
+	delete rrf;
+	delete sh;
 }

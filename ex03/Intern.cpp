@@ -29,7 +29,7 @@ Intern& Intern::operator=(const Intern &i)
 
 AForm* Intern::makeForm(std::string form, std::string target)
 {
-	std::string	formList[4] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	std::string	formList[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
 	int			i = 0;
 
 	while (i < 3 && formList[i] != form)
